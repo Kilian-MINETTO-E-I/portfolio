@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue";
 import HeaderComponent from "./components/Header/HeaderComponent.vue";
+import HeroContentComponent from "@/components/Hero/HeroContentComponent.vue";
 
 const isScrolled = ref(false);
 const isMobileViewport = ref(false);
@@ -30,12 +31,14 @@ onUnmounted(() => {
 </script>
 
 <template>
+  
   <header :class="{'scrolled': isScrolled || isMobileViewport}">
     <HeaderComponent />
   </header>
-  <div id="black-back"></div>
   <main>
-    <section id="hero"></section>
+    <section id="hero">
+      <HeroContentComponent />
+    </section>
     <section id="about"></section>
     <section id="projects"></section>
     <section id="contact"></section>
@@ -46,7 +49,10 @@ onUnmounted(() => {
 #hero {
   min-height: 100vh;
   max-height: 100vh;
-  background-image: url("@/assets/img/Mountain.jpg");
+
+  background: linear-gradient(
+    to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000000 100%
+    ), url("@/assets/img/Mountain.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -70,16 +76,6 @@ header {
 
 header.scrolled {
   background-color: rgba(255, 255, 255, 1);
-}
-
-#black-back {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
-  background-color: rgba(0, 0, 0, 0.2);
-  z-index: -5;
 }
 
 main {
