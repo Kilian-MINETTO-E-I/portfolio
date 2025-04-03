@@ -5,6 +5,7 @@ import HeroContentComponent from "@/components/Hero/HeroContentComponent.vue";
 import AboutComponent from "./components/About/AboutComponent.vue";
 import MarqueeComponent from '@/components/Projects/MarqueeComponent.vue';
 import ProjectComponent from "./components/Projects/ProjectComponent.vue";
+import ContactComponent from "./components/Contact/ContactComponent.vue";
 
 const isScrolled = ref(false);
 const isMobileViewport = ref(false);
@@ -50,7 +51,9 @@ onUnmounted(() => {
       <ProjectComponent />
       <MarqueeComponent />
     </section>
-    <section id="contact"></section>
+    <section id="contact">
+      <ContactComponent />
+    </section>
   </main>
 </template>
 
