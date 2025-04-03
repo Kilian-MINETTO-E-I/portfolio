@@ -100,7 +100,7 @@ export default {
   white-space: nowrap;
   background-color: transparent;
   padding: 1rem 0;
-  margin: 0 0 2rem;
+  margin: 0;
   mask-image: linear-gradient(
     to right,
     transparent 0%,
