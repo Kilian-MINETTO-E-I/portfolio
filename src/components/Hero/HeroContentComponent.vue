@@ -61,4 +61,18 @@
   button:hover {
     background-color: #548b87;
   }
+
+  @media screen and (width <= 900px) {
+    h1 {
+      font-size: 1.6rem;
+    }
+    button {
+      padding: 1rem;
+    }
+  }
+  @media screen and (width < 350px) {
+    h1 {
+      font-size: 1.1rem;
+    }
+  }
 </style>

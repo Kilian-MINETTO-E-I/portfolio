@@ -2,6 +2,7 @@
 import { ref, onMounted, onUnmounted } from "vue";
 import HeaderComponent from "./components/Header/HeaderComponent.vue";
 import HeroContentComponent from "@/components/Hero/HeroContentComponent.vue";
+import AboutComponent from "./components/About/AboutComponent.vue";
 
 const isScrolled = ref(false);
 const isMobileViewport = ref(false);
@@ -39,7 +40,9 @@ onUnmounted(() => {
     <section id="hero">
       <HeroContentComponent />
     </section>
-    <section id="about"></section>
+    <section id="about">
+      <AboutComponent />
+    </section>
     <section id="projects"></section>
     <section id="contact"></section>
   </main>
@@ -85,8 +88,8 @@ main {
 }
 
 #about {
-  background: white;
+  background: #000000;
   padding: 2rem;
-  min-height: 100vh;
+  text-align: center;
 }
 </style>
