@@ -13,7 +13,7 @@
     },
     scrollToContact() {
       const contact = document.getElementById("contact");
-      const top = contact.getBoundingClientRect().top + window.scrollY - 91;
+      const top = contact.getBoundingClientRect().top + window.scrollY;
       window.scrollTo({top, behavior: 'smooth'});
     },
     }
