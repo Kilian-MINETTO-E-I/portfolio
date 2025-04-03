@@ -1,6 +1,12 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue";
 import HeaderComponent from "./components/Header/HeaderComponent.vue";
+import HeroContentComponent from "@/components/Hero/HeroContentComponent.vue";
+import AboutComponent from "./components/About/AboutComponent.vue";
+import MarqueeComponent from '@/components/Projects/MarqueeComponent.vue';
+import ProjectComponent from "./components/Projects/ProjectComponent.vue";
+import ContactComponent from "./components/Contact/ContactComponent.vue";
+import FooterComponent from "./components/Footer/FooterComponent.vue";
 
 const isScrolled = ref(false);
 const isMobileViewport = ref(false);
@@ -30,23 +36,35 @@ onUnmounted(() => {
 </script>
 
 <template>
+  
   <header :class="{'scrolled': isScrolled || isMobileViewport}">
     <HeaderComponent />
   </header>
-  <div id="black-back"></div>
   <main>
-    <section id="hero"></section>
-    <section id="about"></section>
-    <section id="projects"></section>
-    <section id="contact"></section>
+    <section id="hero">
+      <HeroContentComponent />
+    </section>
+    <section id="about">
+      <AboutComponent />
+    </section>
+    <section id="projects">
+      <MarqueeComponent />
+      <ProjectComponent />
+      <MarqueeComponent />
+    </section>
+    <ContactComponent />
   </main>
+  <FooterComponent />
 </template>
 
 <style scoped>
 #hero {
   min-height: 100vh;
   max-height: 100vh;
-  background-image: url("@/assets/img/Mountain.jpg");
+
+  background: linear-gradient(
+    to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000000 100%
+    ), url("@/assets/img/Mountain.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -72,16 +90,6 @@ header.scrolled {
   background-color: rgba(255, 255, 255, 1);
 }
 
-#black-back {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
-  background-color: rgba(0, 0, 0, 0.2);
-  z-index: -5;
-}
-
 main {
   position: relative;
   z-index: 1;
@@ -89,8 +97,12 @@ main {
 }
 
 #about {
-  background: white;
+  background: #000000;
   padding: 2rem;
-  min-height: 100vh;
+  text-align: center;
+}
+
+#projects {
+  background-color: #FFFFFF;
 }
 </style>
